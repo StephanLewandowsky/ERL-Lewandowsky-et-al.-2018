@@ -217,7 +217,7 @@ savePlot(filename = paste(outputdir,"/modlitHistoSlopes",fnmarker,".pdf",sep="")
 
 #######################################################################################
 #first plot the latest annualized means with model projections (no historical conditioning)
-p2f <- 1
+p2f <- 0
 for (whichversion in cmipversions[-grep("masked_had3",cmipversions)]) {
     if (length(grep("had",whichversion))) {
       plotcmip(whichversion,"HADCRUT")
@@ -252,6 +252,13 @@ plmodsanter(alldata,c("HADCRUT"),allmodels,"histo_concat",adjname,
 #masked results (hadCRUT only): retrospective from latest masked and updated model
 plmodsanter(alldata,"HADCRUT",allmodels,paste("masked_had4_blend_hemi_",adjname,sep=""),adjname,
             tofr,plcol,trendlength,cps["HADCRUT"],endyr,p2f)  #note different AGW onset
+
+#ignoring adjustments for now
+# plmodsanter(alldata,"HADCRUT",allmodels,paste("concatmasked_had34_tas_hemi","",sep=""),adjname,
+#             tofr,plcol,trendlength,cps["HADCRUT"],endyr,p2f)  #note different AGW onset
+# plmodsanter(alldata,"HADCRUT",allmodels,paste("masked_had4_blend_hemi","",sep=""),adjname,
+#             tofr,plcol,trendlength,cps["HADCRUT"],endyr,p2f)  #note different AGW onset
+
 
 
 #######################################################################################
